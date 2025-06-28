@@ -1,26 +1,18 @@
-
-
 # Terrain Identification using Semantic Segmentation
 
 This project performs semantic segmentation of terrain types (like grass, rocks, trail, water, mud) using DeepLabV3+ with a ResNet34 encoder, trained on custom annotated terrain datasets.
-
----
 
 ## Project Overview
 
 The goal is to enable machines (e.g., ground robots, drones) to **visually identify and classify terrain types** from RGB images for downstream applications like terrain-aware navigation or path planning.
 
----
-
 ## Repository Structure
 
-| File/Folder              | Purpose                                                                 |
-|--------------------------|-------------------------------------------------------------------------|
+| File/Folder | Purpose |
+|-------------|---------|
 | `TerrainIdentification.ipynb` | The full Colab notebook used for training, evaluation, and visualization |
-| `best_model.pth`         | Trained DeepLabV3+ model weights (PyTorch `.pth`)                        |
-| `README.md`              | Project overview and instructions                                       |
-
----
+| `best_model.pth` | Trained DeepLabV3+ model weights (PyTorch `.pth`) |
+| `README.md` | Project overview and instructions |
 
 ## Model Details
 
@@ -34,8 +26,6 @@ The goal is to enable machines (e.g., ground robots, drones) to **visually ident
   - 3: Rocks
   - 4: Mud / Trail
 
----
-
 ## Requirements
 
 This project was run in **Google Colab** with the following libraries:
@@ -48,65 +38,43 @@ albumentations
 opencv-python
 matplotlib
 PIL
-
 ```
 
-⸻
+## Training Pipeline Summary
 
-Training Pipeline Summary
-	1.	Dataset loaded from structured raw/ and annotations/ folders
-	2.	Custom PyTorch Dataset class handles images and label conversion
-	3.	DeepLabV3+ model trained using CrossEntropyLoss
-	4.	Checkpoints saved when validation loss improves
+1. Dataset loaded from structured `raw/` and `annotations/` folders
+2. Custom PyTorch Dataset class handles images and label conversion
+3. DeepLabV3+ model trained using CrossEntropyLoss
+4. Checkpoints saved when validation loss improves
 
-⸻
-
-🖼️ Inference Example
+## Inference Example
 
 You can use the trained model to predict terrain classes from new images. Example visualization:
-	•	Left: Input RGB image
-	•	Right: Predicted terrain mask (color-coded)
+- **Left**: Input RGB image
+- **Right**: Predicted terrain mask (color-coded)
 
 To test locally or on new data, load the model and run predictions as shown in the notebook.
 
-⸻
+## How to Use
 
-🔍 How to Use
+### 1. Clone the repo and install dependencies:
 
-1. Clone the repo and install dependencies:
-
-⚠️ Or open the notebook directly in Google Colab for GPU-based training
-
+```bash
 git clone https://github.com/your-username/terrain-identification.git
 cd terrain-identification
+```
 
-2. Run the notebook:
+**Or open the notebook directly in Google Colab for GPU-based training**
 
-Open TerrainIdentification.ipynb and run each cell step by step.
+### 2. Run the notebook:
 
-3. Use the trained model:
+Open `TerrainIdentification.ipynb` and run each cell step by step.
 
-You can download or re-use best_model.pth to run inference on any 512×512 image.
+### 3. Use the trained model:
 
-⸻
+You can download or re-use `best_model.pth` to run inference on any 512×512 image.
 
-🙋‍♂️ Author
+## Author
 
-Kirtiraj Tilakdhari Jamnotiya
+**Kirtiraj Tilakdhari Jamnotiya**  
 📧 kjamnotiya@gmail.com
-
-⸻
-
-📘 License
-
-This project is open-source under the MIT License.
-
----
-
-Let me know if you'd like:
-- A **sample image and output gif** added to the README
-- GitHub badges for stars, forks, license
-- Colab badge (`Open in Colab`)
-- Instructions for exporting model to ONNX or TorchScript for deployment
-
-Once ready, I can help you polish the repo description and tags too for discoverability.
