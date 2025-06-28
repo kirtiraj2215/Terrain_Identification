@@ -11,7 +11,7 @@ The goal is to enable machines (e.g., ground robots, drones) to **visually ident
 | File/Folder | Purpose |
 |-------------|---------|
 | `TerrainIdentification.ipynb` | The full Colab notebook used for training, evaluation, and visualization |
-| `best_model.pth` | Trained DeepLabV3+ model weights (PyTorch `.pth`) |
+| `best_model.pth` (Link - https://drive.google.com/drive/folders/1crH84WOqywiG5UcFF_k-d04oc8QEWwBK?usp=sharing) | Trained DeepLabV3+ model weights (PyTorch `.pth`) |
 | `README.md` | Project overview and instructions |
 
 ## Model Details
